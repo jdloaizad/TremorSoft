@@ -50,7 +50,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'androidx.annotation:annotation:1.4.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation files('libs/Xsens_DOT_SDK_Core_Android_v2021.0-release_stable_b234_r111406.aar')
+    implementation files('libs/Xsens_DOT_SDK_Core_Android_v2021.aar')
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.2'
 
     implementation "androidx.activity:activity-ktx:1.4.0"
