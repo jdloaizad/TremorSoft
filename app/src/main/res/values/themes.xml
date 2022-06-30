@@ -1,0 +1,25 @@
+<resources>
+    <!-- Base application theme. -->
+    <!-- Base application theme. -->
+    <style name="Theme.TremorSoft" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Activity with no Title -->
+
+    <!-- Dark Buttons -->
+
+    <!-- Light EditTexts -->
+
+
+    <style name="Theme.TremorSoft.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.TremorSoft.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.TremorSoft.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

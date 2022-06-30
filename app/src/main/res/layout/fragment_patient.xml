@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:paddingLeft="@dimen/fragment_horizontal_margin"
+    android:paddingTop="@dimen/fragment_vertical_margin"
+    android:paddingRight="@dimen/fragment_horizontal_margin"
+    android:paddingBottom="@dimen/fragment_vertical_margin"
+    tools:context=".views.PatientDataFragment">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:visibility="invisible"/>
+
+            <ImageView
+                    android:id="@+id/logo2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dip"
+                    android:contentDescription="@string/logo"
+                    android:src="@drawable/logo"/>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    android:id="@+id/cv_patientID">
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        app:boxStrokeColor="#B71C1C"
+                        app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_patientID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="Patient ID"
+                            android:imeOptions="actionNext"
+                            android:minWidth="320dp"
+                            android:minHeight="48dp"
+                            android:paddingVertical="0dp"
+                            android:singleLine="true"
+                            android:textAlignment="viewStart"
+                            app:autoSizeMaxTextSize="18dp"
+                            app:autoSizeMinTextSize="14dp"
+                            app:autoSizeStepGranularity="2dp"
+                            app:autoSizeTextType="uniform"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    android:id="@+id/cv_age">
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        app:boxStrokeColor="#B71C1C"
+                        app:hintEnabled="false"
+                        app:passwordToggleEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_age"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="Age"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:minWidth="320dp"
+                            android:minHeight="48dp"
+                            android:paddingVertical="0dp"
+                            android:singleLine="true"
+                            android:textAlignment="viewStart"
+                            app:autoSizeMaxTextSize="18dp"
+                            app:autoSizeMinTextSize="14dp"
+                            app:autoSizeStepGranularity="2dp"
+                            app:autoSizeTextType="uniform"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    android:id="@+id/cv_gender">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minWidth="320dp"
+                        android:minHeight="48dp"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/tvGender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:gravity="start|center_horizontal"
+                            android:minHeight="30dp"
+                            android:text="Gender:"
+                            android:textAlignment="gravity"
+                            app:autoSizeMaxTextSize="18dp"
+                            app:autoSizeMinTextSize="14dp"
+                            app:autoSizeStepGranularity="2dp"
+                            app:autoSizeTextType="uniform"/>
+
+                    <RadioGroup
+                            android:id="@+id/rgGender"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal" android:layout_marginStart="20dp">
+
+                        <RadioButton
+                                android:id="@+id/rbMale"
+                                android:layout_width="75dip"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="#B71C1C"
+                                android:text="Male"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+
+                        <RadioButton
+                                android:id="@+id/rbFemale"
+                                android:layout_width="95dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:buttonTint="#B71C1C"
+                                android:text="Female"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    android:id="@+id/cv_familyHistory">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minWidth="320dp"
+                        android:orientation="vertical">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:id="@+id/tvFamilyHistory"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:gravity="start|center_vertical"
+                                android:minHeight="30dp"
+                                android:text="Family Tremor History:"
+                                android:textAlignment="gravity"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+
+                        <RadioGroup
+                                android:id="@+id/rgFamilyHistory"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal" android:gravity="center|left"
+                                android:layout_marginStart="20dp">
+
+                            <RadioButton
+                                    android:id="@+id/tfYes"
+                                    android:layout_width="65dp"
+                                    android:layout_height="wrap_content"
+                                    android:buttonTint="#B71C1C"
+                                    android:text="Yes"
+                                    app:autoSizeMaxTextSize="18dp"
+                                    app:autoSizeMinTextSize="14dp"
+                                    app:autoSizeStepGranularity="2dp"
+                                    app:autoSizeTextType="uniform"/>
+
+                            <RadioButton
+                                    android:id="@+id/tfNo"
+                                    android:layout_width="60dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:buttonTint="#B71C1C"
+                                    android:text="No"
+                                    app:autoSizeMaxTextSize="18dp"
+                                    app:autoSizeMinTextSize="14dp"
+                                    app:autoSizeStepGranularity="2dp"
+                                    app:autoSizeTextType="uniform"/>
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/lyFamilyTremorHistory"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:id="@+id/tvSelectTremor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:gravity="start|center_vertical"
+                                android:minHeight="48dp"
+                                android:text="Select:"
+                                android:textAlignment="gravity"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+
+                        <RadioGroup
+                                android:id="@+id/rgFamilyTremor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <RadioButton
+                                    android:id="@+id/rbPD"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:buttonTint="#B71C1C"
+                                    android:text="Parkinson's Disease"
+                                    app:autoSizeMaxTextSize="18dp"
+                                    app:autoSizeMinTextSize="14dp"
+                                    app:autoSizeStepGranularity="2dp"
+                                    app:autoSizeTextType="uniform"/>
+
+                            <RadioButton
+                                    android:id="@+id/rbET"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:buttonTint="#B71C1C"
+                                    android:text="Essential Tremor"
+                                    app:autoSizeMaxTextSize="18dp"
+                                    app:autoSizeMinTextSize="14dp"
+                                    app:autoSizeStepGranularity="2dp"
+                                    app:autoSizeTextType="uniform"/>
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    android:id="@+id/cv_patientType">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minWidth="320dp"
+                        android:orientation="vertical">
+
+                    <LinearLayout
+                            android:id="@+id/lyPatientType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:id="@+id/tvPatientType"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:gravity="start|center_vertical"
+                                android:minHeight="30dp"
+                                android:text="Patient type:"
+                                android:textAlignment="gravity"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+
+                        <RadioGroup
+                                android:id="@+id/rgPatientType"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <RadioButton
+                                    android:id="@+id/rbTP"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:buttonTint="#B71C1C"
+                                    android:text="Tremulous patient"
+                                    app:autoSizeMaxTextSize="18dp"
+                                    app:autoSizeMinTextSize="14dp"
+                                    app:autoSizeStepGranularity="2dp"
+                                    app:autoSizeTextType="uniform"/>
+
+                            <RadioButton
+                                    android:id="@+id/rbHS"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:buttonTint="#B71C1C"
+                                    android:text="Healthy patient"
+                                    app:autoSizeMaxTextSize="18dp"
+                                    app:autoSizeMinTextSize="14dp"
+                                    app:autoSizeStepGranularity="2dp"
+                                    app:autoSizeTextType="uniform"/>
+                        </RadioGroup>
+
+                    </LinearLayout>
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical" android:id="@+id/ly_previousDiagnosis">
+
+                        <TextView
+                                android:id="@+id/tvPreviousDiagnosis"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:gravity="start|center_vertical"
+                                android:minHeight="30dp"
+                                android:text="Is there a previous diagnosis?"
+                                android:textAlignment="gravity"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+
+                        <RadioGroup
+                                android:id="@+id/rgPreviousDiagnosis"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal" android:gravity="center|left"
+                                android:layout_marginStart="20dp">
+
+                            <RadioButton
+                                    android:id="@+id/pdYes"
+                                    android:layout_width="65dp"
+                                    android:layout_height="wrap_content"
+                                    android:buttonTint="#B71C1C"
+                                    android:text="Yes"
+                                    app:autoSizeMaxTextSize="18dp"
+                                    app:autoSizeMinTextSize="14dp"
+                                    app:autoSizeStepGranularity="2dp"
+                                    app:autoSizeTextType="uniform"/>
+
+                            <RadioButton
+                                    android:id="@+id/pdNo"
+                                    android:layout_width="60dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dip"
+                                    android:buttonTint="#B71C1C"
+                                    android:text="No"
+                                    app:autoSizeMaxTextSize="18dp"
+                                    app:autoSizeMinTextSize="14dp"
+                                    app:autoSizeStepGranularity="2dp"
+                                    app:autoSizeTextType="uniform"/>
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_diagnosis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minWidth="320dp"
+                        android:orientation="vertical" android:id="@+id/lyTremor">
+
+                    <TextView
+                            android:id="@+id/tv_diagnosis"
+                            android:text="Diagnosis:"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:gravity="start|center_vertical"
+                            android:minHeight="30dp"
+                            android:textAlignment="gravity"
+                            app:autoSizeMaxTextSize="18dp"
+                            app:autoSizeMinTextSize="14dp"
+                            app:autoSizeStepGranularity="2dp"
+                            app:autoSizeTextType="uniform"/>
+                    <RadioGroup
+                            android:id="@+id/rg_diagnosis"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:layout_marginStart="20dp">
+
+                        <RadioButton
+                                android:id="@+id/rb_pd"
+                                android:text="Parkinson's Disease"
+                                android:buttonTint="#B71C1C"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+
+                        <RadioButton
+                                android:id="@+id/rb_et"
+                                android:text="Essential Tremor"
+                                android:buttonTint="#B71C1C"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_method"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minWidth="320dp"
+                        android:minHeight="48dp"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/tv_method"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:gravity="start|center_vertical"
+                            android:minHeight="30dp"
+                            android:text="Method:"
+                            android:textAlignment="gravity"
+                            app:autoSizeMaxTextSize="18dp"
+                            app:autoSizeMinTextSize="14dp"
+                            app:autoSizeStepGranularity="2dp"
+                            app:autoSizeTextType="uniform"/>
+                    <RadioGroup
+                            android:id="@+id/rg_method"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal" android:layout_marginStart="20dp">
+
+                        <RadioButton
+                                android:id="@+id/rb_spect"
+                                android:layout_width="90dp"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="#B71C1C"
+                                android:text="SPECT"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+
+                        <RadioButton
+                                android:id="@+id/rb_clinical"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dip"
+                                android:buttonTint="#B71C1C"
+                                android:text="Clinical"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+                    </RadioGroup>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_onsetAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        app:boxStrokeColor="#B71C1C"
+                        app:hintEnabled="false"
+                        app:passwordToggleEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_onsetAge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="Onset age of tremor"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:minWidth="320dp"
+                            android:minHeight="48dp"
+                            android:paddingVertical="0dp"
+                            android:singleLine="true"
+                            android:textAlignment="viewStart"
+                            app:autoSizeMaxTextSize="18dp"
+                            app:autoSizeMinTextSize="14dp"
+                            app:autoSizeStepGranularity="2dp"
+                            app:autoSizeTextType="uniform"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_bilaterality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minWidth="320dp"
+                        android:minHeight="48dp"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/tv_bilaterality"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:gravity="start|center_vertical"
+                            android:minHeight="30dp"
+                            android:text="Bilaterality:"
+                            android:textAlignment="gravity"
+                            app:autoSizeMaxTextSize="18dp"
+                            app:autoSizeMinTextSize="14dp"
+                            app:autoSizeStepGranularity="2dp"
+                            app:autoSizeTextType="uniform"/>
+                    <RadioGroup
+                            android:id="@+id/rg_bilaterality"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal" android:layout_marginStart="20dp">
+
+                        <RadioButton
+                                android:id="@+id/rb_bil_yes"
+                                android:layout_width="65dp"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="#B71C1C"
+                                android:text="Yes"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+
+                        <RadioButton
+                                android:id="@+id/rb_bil_no"
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dip"
+                                android:buttonTint="#B71C1C"
+                                android:text="No"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+                    </RadioGroup>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_treatment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minWidth="320dp"
+                        android:minHeight="48dp"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/tv_treatment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:gravity="start|center_vertical"
+                            android:minHeight="30dp"
+                            android:text="Associated treatments:"
+                            android:textAlignment="gravity"
+                            app:autoSizeMaxTextSize="18dp"
+                            app:autoSizeMinTextSize="14dp"
+                            app:autoSizeStepGranularity="2dp"
+                            app:autoSizeTextType="uniform"/>
+                    <RadioGroup
+                            android:id="@+id/rg_treatment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal" android:layout_marginStart="20dp">
+
+                        <RadioButton
+                                android:id="@+id/rb_tre_yes"
+                                android:layout_width="65dp"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="#B71C1C"
+                                android:text="Yes"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+
+                        <RadioButton
+                                android:id="@+id/rb_tre_no"
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dip"
+                                android:buttonTint="#B71C1C"
+                                android:text="No"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+                    </RadioGroup>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_medication"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minWidth="320dp"
+                        android:minHeight="48dp"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/tv_medication"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:gravity="start|center_vertical"
+                            android:minHeight="30dp"
+                            android:text="Recent medication intake:"
+                            android:textAlignment="gravity"
+                            app:autoSizeMaxTextSize="18dp"
+                            app:autoSizeMinTextSize="14dp"
+                            app:autoSizeStepGranularity="2dp"
+                            app:autoSizeTextType="uniform"/>
+                    <RadioGroup
+                            android:id="@+id/rg_medication"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal" android:layout_marginStart="20dp">
+
+                        <RadioButton
+                                android:id="@+id/rb_med_yes"
+                                android:layout_width="65dp"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="#B71C1C"
+                                android:text="Yes"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+
+                        <RadioButton
+                                android:id="@+id/rb_med_no"
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dip"
+                                android:buttonTint="#B71C1C"
+                                android:text="No"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+                    </RadioGroup>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_concomitances"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minWidth="320dp"
+                        android:minHeight="48dp"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/tv_concomitances"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:gravity="start|center_vertical"
+                            android:minHeight="30dp"
+                            android:text="Concomitances:"
+                            android:textAlignment="gravity"
+                            app:autoSizeMaxTextSize="18dp"
+                            app:autoSizeMinTextSize="14dp"
+                            app:autoSizeStepGranularity="2dp"
+                            app:autoSizeTextType="uniform"/>
+                    <RadioGroup
+                            android:id="@+id/rg_concomitances"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal" android:layout_marginStart="20dp">
+
+                        <RadioButton
+                                android:id="@+id/rb_con_yes"
+                                android:layout_width="65dp"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="#B71C1C"
+                                android:text="Yes"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+
+                        <RadioButton
+                                android:id="@+id/rb_con_no"
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dip"
+                                android:buttonTint="#B71C1C"
+                                android:text="No"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+                    </RadioGroup>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_comorbidities"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minWidth="320dp"
+                        android:minHeight="48dp"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/tv_comorbidities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:gravity="start|center_vertical"
+                            android:minHeight="30dp"
+                            android:text="Comorbidities:"
+                            android:textAlignment="gravity"
+                            app:autoSizeMaxTextSize="18dp"
+                            app:autoSizeMinTextSize="14dp"
+                            app:autoSizeStepGranularity="2dp"
+                            app:autoSizeTextType="uniform"/>
+                    <RadioGroup
+                            android:id="@+id/rg_comorbidities"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal" android:layout_marginStart="20dp">
+
+                        <RadioButton
+                                android:id="@+id/rb_com_yes"
+                                android:layout_width="65dp"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="#B71C1C"
+                                android:text="Yes"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+
+                        <RadioButton
+                                android:id="@+id/rb_com_no"
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dip"
+                                android:buttonTint="#B71C1C"
+                                android:text="No"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+                    </RadioGroup>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                    android:id="@+id/btnConfirm"
+                    style="@style/FirebaseUI.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:text="Confirm"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

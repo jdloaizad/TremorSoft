@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:fitsSystemWindows="true"
+                android:paddingLeft="@dimen/fragment_horizontal_margin"
+                android:paddingTop="@dimen/fragment_vertical_margin"
+                android:paddingRight="@dimen/fragment_horizontal_margin"
+                android:paddingBottom="@dimen/fragment_vertical_margin"
+                tools:context=".views.SensorFragment">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:visibility="invisible"/>
+
+            <ImageView
+                    android:id="@+id/logo2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="35dp"
+                    android:contentDescription="@string/logo"
+                    android:src="@drawable/logo"/>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="2dp" android:id="@+id/cv_sensors">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minWidth="320dp"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/tvSelectSensor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:gravity="start|center_vertical"
+                            android:minHeight="48dp"
+                            android:text="Select a sensor:"
+                            android:textAlignment="gravity"
+                            app:autoSizeMaxTextSize="18dp"
+                            app:autoSizeMinTextSize="14dp"
+                            app:autoSizeStepGranularity="2dp"
+                            app:autoSizeTextType="uniform"/>
+                    <RadioGroup
+                            android:id="@+id/rgSensor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        <RadioButton
+                                android:id="@+id/rbSmartphone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:buttonTint="#B71C1C"
+                                android:text="Built-in Smartphone sensors"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+
+                        <RadioButton
+                                android:id="@+id/rbXsensDOT"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:buttonTint="#B71C1C"
+                                android:text="Xsens DOT"
+                                app:autoSizeMaxTextSize="18dp"
+                                app:autoSizeMinTextSize="14dp"
+                                app:autoSizeStepGranularity="2dp"
+                                app:autoSizeTextType="uniform"/>
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="2dp" android:id="@+id/cv_xsens_dot">
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minWidth="320dp">
+                    <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" android:layout_gravity="center"
+                            android:id="@+id/cv_device_info">
+                        <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:layout_gravity="center"
+                                android:elevation="2dp">
+                            <androidx.cardview.widget.CardView
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content">
+                                <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content" android:elevation="2dp"
+                                        android:soundEffectsEnabled="false" android:backgroundTint="#B71C1C"
+                                        android:padding="5dp">
+                                    <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+                                        <TextView
+                                                android:id="@+id/tv_sensor"
+                                                android:layout_width="146dp"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center"
+                                                android:minHeight="30dp"
+                                                android:textAlignment="gravity"
+                                                app:autoSizeMaxTextSize="18dp"
+                                                app:autoSizeMinTextSize="14dp"
+                                                app:autoSizeStepGranularity="2dp"
+                                                app:autoSizeTextType="uniform"/>
+                                        <TextView
+                                                android:id="@+id/tv_battery"
+                                                android:layout_width="48dp"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center|end"
+                                                android:minHeight="30dp"
+                                                android:textAlignment="gravity"
+                                                app:autoSizeMaxTextSize="18dp"
+                                                app:autoSizeMinTextSize="14dp"
+                                                app:autoSizeStepGranularity="2dp"
+                                                app:autoSizeTextType="uniform" android:layout_gravity="right|end"/>
+                                    </LinearLayout>
+                                    <TextView
+                                            android:id="@+id/tv_mac_address"
+                                            android:layout_width="146dp"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:textAlignment="gravity"
+                                            app:autoSizeMaxTextSize="18dp"
+                                            app:autoSizeMinTextSize="14dp"
+                                            app:autoSizeStepGranularity="2dp"
+                                            app:autoSizeTextType="uniform" android:layout_gravity="center|start"/>
+                                    <TextView
+                                            android:id="@+id/tv_state"
+                                            android:layout_width="146dp"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:textAlignment="gravity"
+                                            app:autoSizeMaxTextSize="18dp"
+                                            app:autoSizeMinTextSize="14dp"
+                                            app:autoSizeStepGranularity="2dp"
+                                            app:autoSizeTextType="uniform" android:layout_gravity="center|start"/>
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+                            <Switch
+                                    android:layout_width="match_parent"
+                                    android:layout_height="48dp" android:id="@+id/switch_connect"
+                                    android:layout_weight="1" android:layout_gravity="center|end"
+                                    android:minWidth="48dp"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <Button
+                            android:id="@+id/btn_action"
+                            style="@style/FirebaseUI.Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:autoSizeTextType="uniform"
+                            android:gravity="center"
+                            android:text="Confirm"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:id="@+id/cv_instructions"
+                    android:layout_marginBottom="2dp">
+
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <TextView
+                            android:id="@+id/title"
+                            android:text="Instructions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textAllCaps="true"
+                            android:textColor="#B71C1C"
+                            android:textAlignment="gravity"
+                            app:autoSizeMaxTextSize="20dp"
+                            app:autoSizeMinTextSize="16dp"
+                            app:autoSizeStepGranularity="2dp"
+                            app:autoSizeTextType="uniform"
+                            android:layout_marginHorizontal="8dp" android:layout_marginBottom="10dp"
+                            android:minHeight="24dp" android:gravity="center"/>
+                    <TextView
+                            android:id="@+id/tv_instructions"
+                            android:text="In order to start the test, please select the first position to record."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="gravity"
+                            android:minHeight="140dp"
+                            app:autoSizeMaxTextSize="18dp"
+                            app:autoSizeMinTextSize="14dp"
+                            app:autoSizeStepGranularity="2dp"
+                            app:autoSizeTextType="uniform"
+                            android:layout_marginHorizontal="8dp" android:gravity="center_vertical"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp" android:id="@+id/cv_position"
+                    android:layout_marginBottom="2dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minWidth="320dp"
+                        android:orientation="vertical">
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center">
+
+                        <RadioGroup
+                                android:id="@+id/rg_position"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                            <RadioButton
+                                    android:id="@+id/rb_rest"
+                                    android:layout_width="75dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:buttonTint="#B71C1C"
+                                    android:text="Rest"
+                                    app:autoSizeMaxTextSize="18dp"
+                                    app:autoSizeMinTextSize="14dp"
+                                    app:autoSizeStepGranularity="2dp"
+                                    app:autoSizeTextType="uniform"/>
+
+                            <ImageView
+                                    android:src="@drawable/check"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:id="@+id/check_rest"
+                                    android:tint="#B71C1C"
+                                    android:layout_gravity="center" android:visibility="invisible"/>
+                            <RadioButton
+                                    android:id="@+id/rb_posture"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dip"
+                                    android:buttonTint="#B71C1C"
+                                    android:text="Posture"
+                                    app:autoSizeMaxTextSize="18dp"
+                                    app:autoSizeMinTextSize="14dp"
+                                    app:autoSizeStepGranularity="2dp"
+                                    app:autoSizeTextType="uniform"/>
+                            <ImageView
+                                    android:src="@drawable/check"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:id="@+id/check_posture"
+                                    android:tint="#B71C1C"
+                                    android:minWidth="48dp"
+                                    android:layout_gravity="center"
+                                    android:visibility="invisible"/>
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="15dp" android:id="@+id/cv_figure">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minWidth="320dp"
+                        android:minHeight="48dp"
+                        android:orientation="horizontal">
+
+                    <ImageView
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:id="@+id/position_fig"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="25dp"
+                    app:cardElevation="0dp"
+                    android:id="@+id/cv_buttons">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minWidth="320dp"
+                        android:orientation="horizontal" android:layout_gravity="center" android:gravity="center">
+
+                    <Button
+                            android:id="@+id/btn_action1"
+                            style="@style/FirebaseUI.Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:autoSizeTextType="uniform"
+                            android:text="Start" android:layout_marginHorizontal="10dp"/>
+
+                    <Button
+                            android:id="@+id/btn_action2"
+                            style="@style/FirebaseUI.Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:autoSizeTextType="uniform"
+                            android:text="Start"
+                            android:layout_marginHorizontal="10dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

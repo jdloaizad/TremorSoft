@@ -1,0 +1,110 @@
+<resources>
+    <string name="app_name">TremorSoft</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+
+    <string name="create_account">Create Account</string>
+    <string name="login">Login</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_in_with_email">Sign in with email</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="password">Password</string>
+    <string name="e_mail">E-mail</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="or">OR</string>
+    <string name="logo">Logo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="hint_turn_on_bluetooth">Please turn on the Bluetooth adapter.</string>
+    <string name="hint_allow_location">Please allow location permission to use sensor(s).</string>
+    <string name="hint_connecting">Please wait for the connection result…</string>
+    <string name="hint_syncing_failed">Put sensors as close as possible and try again.</string>
+    <string name="hint_check_connection">Some sensors are disconnected. Please check the connection.</string>
+
+    <string name="menu_start_scan">Scan</string>
+    <string name="menu_stop_scan">Stop Scanning</string>
+    <string name="menu_start_streaming">Start</string>
+    <string name="menu_stop_streaming">Stop</string>
+    <string name="menu_measure">Measure</string>
+
+    <string name="disconnected">Disconnected</string>
+    <string name="connecting">Connecting</string>
+    <string name="connected">Connected</string>
+    <string name="reconnecting">Reconnecting</string>
+    <string name="batt_state_charging">Charging</string>
+    <string name="syncing">Syncing</string>
+    <string name="mode">Mode:</string>
+    <string name="sync_status">Sync status:</string>
+    <string name="sync_result_success">Success</string>
+    <string name="sync_result_fail">Fail</string>
+    <string name="mode_complete_euler">Complete (Euler)</string>
+    <string name="name">Name:</string>
+    <string name="orientation">Orientation (deg):</string>
+    <string name="free_acc">Free Acceleration (m/s2):</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rest_instructions">Instruct the patient to rest the forearms on the chair armrest as shown in the
+        image, and once the patient is in the correct position, press the Start button to proceed with the data
+        recording.
+    </string>
+    <string name="posture_instructions">Instruct the patient to keep both arms fully extended as shown in the image and,
+        once the patient is in the correct position, press the Start button to proceed with the data recording.
+    </string>
+    <string name="cancel_instructions">The data registration has been canceled. Select a new position to be
+        registered.
+    </string>
+    <string name="record_instructions">The data has been saved successfully. Select the remaining position to
+        complete the recording process.
+    </string>
+    <string name="bothPos_recorded">Both positions have been successfully recorded and saved. Press the Upload button to
+        proceed with the analysis and classification of the data. To repeat the recording process, press the Reset
+        button.
+    </string>
+    <string name="wait_analyzing">Wait while the data is being analyzed.</string>
+    <string name="recordDone_instructions">If you consider that the data has been appropriately recorded, press the
+        Confirm button to save the recorded data. Otherwise, press the Restart button to repeat the recording.
+    </string>
+    <string name="wait_instructions">Data recording will begin shortly. \n %.00f sec </string>
+    <string name="time_instructions">Wait while the data is being recorded. \n %.00f sec </string>
+    <string name="cancel">Cancel</string>
+    <string name="start">Start</string>
+    <string name="reset">Reset</string>
+    <string name="upload">Upload</string>
+    <string name="restart">Restart</string>
+    <string name="send">Send</string>
+
+    <string name="hs_result">The recorded tremor has been classified as physiological tremor.</string>
+    <string name="et_result">A pathological tremor has been identified. It has been classified as Essential tremor.
+    </string>
+    <string name="pd_result">A pathological tremor has been identified. It has been classified as Parkinson\'s disease.
+    </string>
+    <string name="confirm">Confirm</string>
+    <string name="rest">Rest</string>
+    <string name="posture">Posture</string>
+    <string name="record_save">Record saved</string>
+    <string name="completed">Registration completed</string>
+    <string name="preparing">Preparing data</string>
+    <string name="uploading">Uploading data</string>
+    <string name="analyzing">Analyzing</string>
+    <string name="result">Result</string>
+    <string name="initializing">Initializing</string>
+    <string name="recording">Recording</string>
+    <string name="position_recorded">Position recorded</string>
+    <string name="scanning">Scanning</string>
+    <string name="exporting_data">Exporting data</string>
+    <string name="initializing_xsens">Please wait until the sensor is ready to start recording.</string>
+    <string name="initial_instructions">In order to start the test, please select the first position to record.</string>
+    <string name="initial_title">Instructions</string>
+    <string name="instruction_export">Please wait while the data is being exported from Xsens Dot.</string>
+    <string name="New">New</string>
+    <string name="assessment_finalized">The data has been sent and saved successfully. Press the New button to record a
+        new patient. To repeat the recording process with the current patient, press the Reset button.</string>
+    <string name="submitted">Submitted</string>
+
+</resources>

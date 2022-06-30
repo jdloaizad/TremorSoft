@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "889588528171",
+    "project_id": "tremorsoft-39b47",
+    "storage_bucket": "tremorsoft-39b47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889588528171:android:efe2ecf329d171878b666e",
+        "android_client_info": {
+          "package_name": "com.tremorsoft"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889588528171-k1vjrgr1p1303psdgsge095b2ssokcp2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tremorsoft",
+            "certificate_hash": "92e1c668613b1e6f321de3e21747ef539566aa5f"
+          }
+        },
+        {
+          "client_id": "889588528171-gmojrmi1kd7vt0f7re0eakt6nn4ggcrr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx5nj4U6ELTVpFAiazeNMpQFEZf5OhlFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889588528171-gmojrmi1kd7vt0f7re0eakt6nn4ggcrr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

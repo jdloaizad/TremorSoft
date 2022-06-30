@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+            app:startDestination="@id/nav_login">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.tremorsoft.views.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_login"
+            app:destination="@id/nav_login" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_patient"
+            app:destination="@id/nav_patient" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.tremorsoft.views.SignInFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_nav_login_to_nav_signUp"
+            app:destination="@id/nav_signUp" />
+        <action
+            android:id="@+id/action_nav_login_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_signUp"
+        android:name="com.tremorsoft.views.SignUpFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_nav_signUp_to_nav_login"
+            app:destination="@id/nav_login" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_patient"
+        android:name="com.tremorsoft.views.PatientDataFragment"
+        android:label="Patient"
+        tools:layout="@layout/fragment_patient" >
+        <action
+            android:id="@+id/action_nav_patient_to_nav_sensor"
+            app:destination="@id/nav_sensor" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_sensor"
+        android:name="com.tremorsoft.views.SensorFragment"
+        android:label="Sensors"
+        tools:layout="@layout/fragment_sensor" >
+        <action android:id="@+id/action_nav_sensor_to_nav_recording" app:destination="@id/nav_recording"/>
+        <action android:id="@+id/action_nav_sensor_self" app:destination="@id/nav_sensor"/>
+        <action android:id="@+id/action_nav_sensor_to_nav_home" app:destination="@id/nav_home"/>
+    </fragment>
+    <fragment android:id="@+id/nav_recording" android:name="com.tremorsoft.views.SmartphoneFragment"
+              android:label="Recording" tools:layout="@layout/fragment_recording">
+        <action android:id="@+id/action_nav_recording_self" app:destination="@id/nav_recording"/>
+        <action android:id="@+id/action_nav_recording_to_nav_home" app:destination="@id/nav_home"/>
+    </fragment>
+</navigation>
