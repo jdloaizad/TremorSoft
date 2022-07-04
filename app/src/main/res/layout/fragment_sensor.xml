@@ -124,8 +124,10 @@
                                 <LinearLayout
                                         android:orientation="vertical"
                                         android:layout_width="match_parent"
-                                        android:layout_height="wrap_content" android:elevation="2dp"
-                                        android:soundEffectsEnabled="false" android:backgroundTint="#B71C1C"
+                                        android:layout_height="wrap_content"
+                                        android:elevation="2dp"
+                                        android:soundEffectsEnabled="false"
+                                        android:backgroundTint="#B71C1C"
                                         android:padding="5dp">
                                     <LinearLayout
                                             android:orientation="horizontal"
@@ -152,7 +154,8 @@
                                                 app:autoSizeMaxTextSize="18dp"
                                                 app:autoSizeMinTextSize="14dp"
                                                 app:autoSizeStepGranularity="2dp"
-                                                app:autoSizeTextType="uniform" android:layout_gravity="right|end"/>
+                                                app:autoSizeTextType="uniform"
+                                                android:layout_gravity="right"/>
                                     </LinearLayout>
                                     <TextView
                                             android:id="@+id/tv_mac_address"

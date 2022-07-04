@@ -206,7 +206,8 @@
                                 android:id="@+id/rgFamilyHistory"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:orientation="horizontal" android:gravity="center|left"
+                                android:orientation="horizontal"
+                                android:gravity="center|start"
                                 android:layout_marginStart="20dp">
 
                             <RadioButton
@@ -379,7 +380,8 @@
                                 android:id="@+id/rgPreviousDiagnosis"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:orientation="horizontal" android:gravity="center|left"
+                                android:orientation="horizontal"
+                                android:gravity="center|start"
                                 android:layout_marginStart="20dp">
 
                             <RadioButton

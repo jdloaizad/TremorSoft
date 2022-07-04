@@ -23,32 +23,12 @@
 
     <string name="hint_turn_on_bluetooth">Please turn on the Bluetooth adapter.</string>
     <string name="hint_allow_location">Please allow location permission to use sensor(s).</string>
-    <string name="hint_connecting">Please wait for the connection result…</string>
-    <string name="hint_syncing_failed">Put sensors as close as possible and try again.</string>
-    <string name="hint_check_connection">Some sensors are disconnected. Please check the connection.</string>
-
-    <string name="menu_start_scan">Scan</string>
-    <string name="menu_stop_scan">Stop Scanning</string>
-    <string name="menu_start_streaming">Start</string>
-    <string name="menu_stop_streaming">Stop</string>
-    <string name="menu_measure">Measure</string>
 
     <string name="disconnected">Disconnected</string>
     <string name="connecting">Connecting</string>
     <string name="connected">Connected</string>
     <string name="reconnecting">Reconnecting</string>
-    <string name="batt_state_charging">Charging</string>
-    <string name="syncing">Syncing</string>
-    <string name="mode">Mode:</string>
-    <string name="sync_status">Sync status:</string>
-    <string name="sync_result_success">Success</string>
-    <string name="sync_result_fail">Fail</string>
-    <string name="mode_complete_euler">Complete (Euler)</string>
-    <string name="name">Name:</string>
-    <string name="orientation">Orientation (deg):</string>
-    <string name="free_acc">Free Acceleration (m/s2):</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="rest_instructions">Instruct the patient to rest the forearms on the chair armrest as shown in the
         image, and once the patient is in the correct position, press the Start button to proceed with the data
         recording.
@@ -89,7 +69,6 @@
     <string name="posture">Posture</string>
     <string name="record_save">Record saved</string>
     <string name="completed">Registration completed</string>
-    <string name="preparing">Preparing data</string>
     <string name="uploading">Uploading data</string>
     <string name="analyzing">Analyzing</string>
     <string name="result">Result</string>

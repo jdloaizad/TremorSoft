@@ -5,15 +5,24 @@
 
 package com.tremorsoft.views
 
+import android.Manifest
 import android.bluetooth.BluetoothDevice
 import android.bluetooth.le.ScanSettings
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
 import android.text.Layout.JUSTIFICATION_MODE_INTER_WORD
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -88,6 +97,8 @@ class SensorFragment : BaseFragment(), XsensDotDeviceCallback, XsensDotScannerCa
     private var postureRecordStatus = false
     private var recordingStatus = false
     private var isDataExported = false
+    private var isScanPermissionGranted = false
+    private var isConnectPermissionGranted = false
 
     private var patientData: PatientData? = null
     private var recordingData: RecordingData? = null
@@ -140,6 +151,34 @@ class SensorFragment : BaseFragment(), XsensDotDeviceCallback, XsensDotScannerCa
             cvFigure.isVisible = false
             cvButtons.isVisible = false
 
+            rbXsensDOT.isEnabled = false
+
+            // You can directly ask for the permission.
+            // The registered ActivityResultCallback gets the result of this request.
+            when (PackageManager.PERMISSION_GRANTED) {
+                ContextCompat.checkSelfPermission(
+                    context!!,
+                    Manifest.permission.BLUETOOTH_SCAN
+                ) -> rbXsensDOT.isEnabled = true
+                else -> requestPermissionLauncher.launch(Manifest.permission.BLUETOOTH_SCAN)
+            }
+
+            when (PackageManager.PERMISSION_GRANTED) {
+                ContextCompat.checkSelfPermission(
+                    context!!,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                ) -> rbXsensDOT.isEnabled = true
+                else -> requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
+            }
+
+            when (PackageManager.PERMISSION_GRANTED) {
+                ContextCompat.checkSelfPermission(
+                    context!!,
+                    Manifest.permission.BLUETOOTH_CONNECT
+                ) -> rbXsensDOT.isEnabled = true
+                else -> requestPermissionLauncher.launch(Manifest.permission.BLUETOOTH_CONNECT)
+            }
+
             rgSensor.setOnCheckedChangeListener { _, sensor ->
                 checkedSensor = sensor
 
@@ -156,7 +195,7 @@ class SensorFragment : BaseFragment(), XsensDotDeviceCallback, XsensDotScannerCa
                         initXsScanner()
                         mXsDotScanner?.startScan()
                         showProgressBar()
-                        binding.tvState.text = getString(R.string.scanning)
+                        tvState.text = getString(R.string.scanning)
                     }
                 }
             }
@@ -332,6 +371,22 @@ class SensorFragment : BaseFragment(), XsensDotDeviceCallback, XsensDotScannerCa
             JUSTIFICATION_MODE_INTER_WORD.also { tvInstructions.justificationMode = it }
         }
     }
+
+    private val requestPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
+            if (isGranted) {
+                binding.rbXsensDOT.isEnabled = true
+
+            } else {
+                binding.rbXsensDOT.isEnabled = false
+                // Explain to the user that the feature is unavailable because the
+                // features requires a permission that the user has denied. At the
+                // same time, respect the user's decision. Don't link to system
+                // settings in an effort to convince the user to change their
+                // decision.
+            }
+        }
+
 
     private fun initXsScanner() {
         mXsDotScanner = XsensDotScanner(context, this)

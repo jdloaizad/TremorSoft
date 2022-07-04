@@ -196,7 +196,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:autoSizeTextType="uniform"
-                            android:text="Start" android:layout_marginHorizontal="10dp"/>
+                            android:text="Start"
+                            android:layout_marginHorizontal="10dp"/>
 
                     <Button
                             android:id="@+id/btn_action2"

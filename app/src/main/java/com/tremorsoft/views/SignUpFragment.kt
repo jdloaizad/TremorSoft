@@ -8,6 +8,7 @@ package com.tremorsoft.views
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.net.Uri
@@ -23,6 +24,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -34,6 +36,7 @@ import com.tremorsoft.databinding.FragmentSignUpBinding
 import java.io.*
 import java.text.SimpleDateFormat
 import java.util.*
+import android.Manifest
 
 
 class SignUpFragment : BaseFragment() {
@@ -133,9 +136,35 @@ class SignUpFragment : BaseFragment() {
 
     @SuppressLint("RestrictedApi")
     private fun uploadProfileImage() {
-        val photoIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        uploadGetResult.launch(photoIntent)
+
+        when (PackageManager.PERMISSION_GRANTED) {
+            ContextCompat.checkSelfPermission(context!!, Manifest.permission.CAMERA) -> {
+                val photoIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                uploadGetResult.launch(photoIntent)
+            }
+            else -> {
+                // You can directly ask for the permission.
+                // The registered ActivityResultCallback gets the result of this request.
+                requestPermissionLauncher.launch(Manifest.permission.CAMERA)
+            }
+        }
     }
+
+    private val requestPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
+            if (isGranted) {
+
+                val photoIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                uploadGetResult.launch(photoIntent)
+
+            } else {
+                // Explain to the user that the feature is unavailable because the
+                // features requires a permission that the user has denied. At the
+                // same time, respect the user's decision. Don't link to system
+                // settings in an effort to convince the user to change their
+                // decision.
+            }
+        }
 
     private val uploadGetResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if (it.resultCode == Activity.RESULT_OK) {
