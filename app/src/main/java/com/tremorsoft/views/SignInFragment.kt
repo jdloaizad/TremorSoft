@@ -185,13 +185,11 @@ class SignInFragment : BaseFragment() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithCredential:success")
                     auth.currentUser
                     updateUI()
                     findNavController().navigate(R.id.action_nav_login_to_nav_home)
                 } else {
-                    // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
                     val view = binding.mainLayout
                     Snackbar.make(view, "Authentication Failed.", Snackbar.LENGTH_SHORT).show()

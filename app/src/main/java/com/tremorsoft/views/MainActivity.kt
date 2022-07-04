@@ -71,14 +71,12 @@ class MainActivity : AppCompatActivity(), DrawerController {
 
     override fun onBackPressed() {
         val manager = supportFragmentManager
-
-        // If the fragment count > 0 in the stack, try to resume the previous page.
         if (manager.backStackEntryCount > 0) manager.popBackStack() else super.onBackPressed()
     }
 
     private val mBluetoothStateReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
-            val action = intent.action
+            intent.action
         }
     }
 
