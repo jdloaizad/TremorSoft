@@ -5,13 +5,16 @@
 
 package com.tremorsoft.views
 
+import android.app.Activity
 import android.bluetooth.BluetoothAdapter
+import android.bluetooth.BluetoothManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.graphics.Color
 import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -31,6 +34,7 @@ class MainActivity : AppCompatActivity(), DrawerController {
 
     private var drawerLayout: DrawerLayout? = null
     var navView: NavigationView? = null
+    val REQUEST_ENABLE_BT = 1001
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,6 +66,17 @@ class MainActivity : AppCompatActivity(), DrawerController {
             mBluetoothStateReceiver,
             IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED)
         )
+
+        val bluetoothManager: BluetoothManager = getSystemService(BluetoothManager::class.java)
+        val bluetoothAdapter: BluetoothAdapter? = bluetoothManager.adapter
+        if (bluetoothAdapter == null) {
+            // Device doesn't support Bluetooth
+        }
+
+        if (bluetoothAdapter?.isEnabled == false) {
+            val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
+            registerForResult.launch(enableBtIntent)
+        }
     }
 
     override fun onDestroy() {
@@ -72,6 +87,15 @@ class MainActivity : AppCompatActivity(), DrawerController {
     override fun onBackPressed() {
         val manager = supportFragmentManager
         if (manager.backStackEntryCount > 0) manager.popBackStack() else super.onBackPressed()
+    }
+
+    private val registerForResult = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val intent = result.data
+            // Handle the Intent
+        }
     }
 
     private val mBluetoothStateReceiver: BroadcastReceiver = object : BroadcastReceiver() {
