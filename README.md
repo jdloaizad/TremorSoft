@@ -4,6 +4,8 @@ An decision support application for differential diagnosis between Parkinson's D
 Copyright (c) 2022. TremorSoft
 All Rights Reserved. This work is protected by copyright laws and international treaties.
 
+![TremorSoft Logo](https://github.com/jdloaizad/TremorSoft/blob/master/app/src/main/res/drawable/logo.png)
+
 ## Purpose
 
 TremorSoft is a mobile application designed as a diagnostic support tool for patients with movement disorders, specifically those with suspected Parkinson's Disease (PD) or Essential Tremor (ET). With this app, in a few minutes and through a few simple steps, physicians and movement disorder specialists can record and classify their patients' hand tremors during clinical routine by using the internal accelerometer and gyroscope of a smartphone device or an Xsens Dot sensor connected to the app wirelessly. The recorded data can also be used for monitoring disease progression and assessing treatment effectiveness.
