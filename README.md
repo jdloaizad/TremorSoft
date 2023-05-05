@@ -1,4 +1,6 @@
 # TremorSoft
+Authors: Julián D. Loaiza Duque, Antonio J. Sánchez Egea, Hernán González Rojas, Pedro Chaná-Cuevas, Joaquim J. Ferreira and João Costa
+
 An decision support application for differential diagnosis between Parkinson's Disease and Essential Tremor
 
 Copyright (c) 2022. TremorSoft
