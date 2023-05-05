@@ -5,7 +5,7 @@ Copyright (c) 2022. TremorSoft
 All Rights Reserved. This work is protected by copyright laws and international treaties.
 
 <p align="center"> 
-  <img width="600" height="200" src=https://github.com/jdloaizad/TremorSoft/blob/master/app/src/main/res/drawable/logo.png)>
+  <img width="600" height="200" src=https://github.com/jdloaizad/TremorSoft/blob/master/app/src/main/res/drawable/logo.png>
 </p>
 
 ## Purpose
